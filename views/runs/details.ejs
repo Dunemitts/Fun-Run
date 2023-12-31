@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title%></title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <h1><%= runItem.name%></h1>
+        <p><strong>Type: </strong><%= runItem.run_type%></p>
+        <p><strong>Date: </strong><%= runItem.date%></p>
+        <p><strong>City: </strong><%= runItem.city%></p>
+        <p><strong>State: </strong><%= runItem.state%></p>
+        <p><strong>URL: </strong><a href="<%= runItem.url %>"><%= runItem.url%></a></p>
+        <h2>Users</h2>
+        <ul>
+            <% runItem.users.forEach((use) => { %>
+                <li><a href="/users/<%= use.id %>"><%= use.first_name%> <%= use.last_name%></a></li>
+            <% })%>
+        </ul>
+    </body>
+</html>

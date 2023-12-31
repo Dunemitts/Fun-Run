@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title%></title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <h1><%= userItem.first_name%> <%= userItem.last_name%></h1>
+        <p><strong>Email: </strong><%= userItem.email%></p>
+        <p><strong>Gender: </strong><%= userItem.gender%></p>
+        <h2>Runs</h2>
+        <ul>
+            <% userItem.runs.forEach((run) => { %>
+                <li><a href="/runs/<%= run.id %>"><%= run.name %></a></li>
+            <% })%>
+        </ul>
+    </body>
+</html>
